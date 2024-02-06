@@ -11,62 +11,51 @@ namespace Construtores_Sobrecarga_This_Encapsulamento
 	internal class Product
 	{
 		private string _name;
-		private double _price;
-		private int _quantity;
+        public double Price { get; private set; }
 
-		public Product() { }
+        public int Quantity { get; private set; }
+
+        public Product() { }
 
 		public Product(string name, double price, int quantity)
 		{
 			_name = name;
-			_price = price;
-			_quantity = quantity;
+			Price = price;
+			Quantity = quantity;
 		}
 
         public string Name
 		{
 			get { return _name; }
 			set {
-				if (value != null && value.Length > 1)
+				if (value != null && value.Length > 1) 
 				{
 					_name = value;
 				}
 			}
 		}
-
-        public double Price 
-		{
-			get { return _price; }
-			// Como preço e quantidade não podem ser alterados, eles terão apenas o Get!!
-		}
-
-        public int Quantity
-		{
-			get { return _quantity; }
-		}
-
 		public double TotalStockValue()
 		{
-			return _price * _quantity;
+			return Price * Quantity;
 		}
 
 		public void AddProducts(int quantity)
 		{
-			_quantity += quantity;
+			Quantity += quantity;
 		}
 
 		public void RemoveProducts(int quantity)
 		{
-			_quantity -= quantity;
+			Quantity -= quantity;
 		}
 
 		public override string ToString()
 		{
 			return _name
 				+ ", $"
-				+ _price.ToString("F2", CultureInfo.InvariantCulture)
+				+ Price.ToString("F2", CultureInfo.InvariantCulture)
 				+ ", "
-				+ _quantity
+				+ Quantity
 				+ " unidades, Total: $ "
 				+ TotalStockValue().ToString("F2", CultureInfo.InvariantCulture);
 		}
