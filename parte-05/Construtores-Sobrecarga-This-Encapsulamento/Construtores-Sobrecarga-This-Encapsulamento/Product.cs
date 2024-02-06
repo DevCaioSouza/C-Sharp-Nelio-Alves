@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
+using System.Xml.Linq;
 
 namespace Construtores_Sobrecarga_This_Encapsulamento
 {
@@ -22,22 +23,26 @@ namespace Construtores_Sobrecarga_This_Encapsulamento
 			_quantity = quantity;
 		}
 
-		public string GetName()
+        public string Name
 		{
-			return _name;
+			get { return _name; }
+			set {
+				if (value != null && value.Length > 1)
+				{
+					_name = value;
+				}
+			}
 		}
 
-		public double GetPrice()
+        public double Price 
 		{
-			return _price;
+			get { return _price; }
+			// Como preço e quantidade não podem ser alterados, eles terão apenas o Get!!
 		}
 
-		public void SetName(string name)
+        public int Quantity
 		{
-			if (name != null && name.Length > 1)
-			{
-				_name = name;
-			} 
+			get { return _quantity; }
 		}
 
 		public double TotalStockValue()
