@@ -17,3 +17,22 @@ for (int i = 0; i < N; i++)
 	}
 }
 
+Console.WriteLine("Diagonal principal: ");
+for (int i = 0; i < N; i++)
+{
+	Console.Write(matriz[i, i] + " ");
+}
+Console.WriteLine();
+
+Console.WriteLine("Valores negativos da matriz: ");
+for (int i = 0; i < N; i++)
+{
+	for (int j = 0; j < N; j++)
+	{
+		if (matriz[i, j] < 0)
+		{
+			Console.Write(matriz[i, j] + " ");
+		}
+	}
+}
+
