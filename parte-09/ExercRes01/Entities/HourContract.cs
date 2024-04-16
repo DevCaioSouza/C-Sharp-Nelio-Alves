@@ -11,6 +11,7 @@ namespace ExercRes01.Entities
 		public DateTime Date { get; set; }
         public double ValuePerHour { get; set; }
         public int Hours { get; set; }
+
         public HourContract() { }
 
 		public HourContract(DateTime date, double valuePerHour, int hours)
@@ -20,9 +21,9 @@ namespace ExercRes01.Entities
 			Hours = hours;
 		}
 
-		public double TotalValue(int hours, double valuePerHour)
+		public double TotalValue()
 		{
-			return hours * valuePerHour;
+			return Hours * ValuePerHour;
 		}
 	}
 }
