@@ -41,7 +41,7 @@ namespace ExercRes02.Entities
 			sb.AppendLine(Title);
 			sb.Append(Likes);
 			sb.Append(" Likes - ");
-			sb.AppendLine(Moment.ToString("dd/MM/yyyy HH:mm:ss"));
+			sb.AppendLine(Moment.ToString("MM/dd/yyyy HH:mm:ss"));
 			sb.AppendLine(Content);
 			sb.AppendLine("Comments: ");
 
