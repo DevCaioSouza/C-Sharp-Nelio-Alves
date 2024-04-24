@@ -34,7 +34,11 @@ namespace Generics_Part_01.Services
 			{
 				Console.Write(_values[i] + ", ");
 			}
-			Console.Write(_values[_count - 1]);
+			if(_count > 0)
+			{
+				Console.Write(_values[_count - 1]);
+			}
+			
 			Console.WriteLine(" ]");
 			
 
